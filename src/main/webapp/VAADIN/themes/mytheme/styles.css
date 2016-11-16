@@ -12967,3 +12967,9 @@ div.v-layout.v-horizontal.v-widget {
 	width: 19px;
 	overflow: hidden;
 }
+.csstag {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	padding: 5px;
+}

@@ -7,5 +7,16 @@
 .mytheme {
   @include addons;
   @include mytheme;
-
+  .csstag {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 5px;
+  }
+}
+.csstag {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  padding: 5px;
 }

@@ -10,9 +10,10 @@ public class Description extends VerticalLayout {
 
     public Description() {
         Label area = new Label();
-        area.setCaption("Здесь будет описание фильма");
+        area.setCaption("Date:10/11/2016");
         addComponent(area);
-        setComponentAlignment(area, Alignment.TOP_CENTER);
-
+        //setComponentAlignment(area, Alignment.TOP_CENTER);
+        addComponent(new Label("Time: 16-30"));
+        addComponent(new Label("AA: 76 BB: 70 CC:80"));
     }
 }

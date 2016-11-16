@@ -20,32 +20,28 @@ import java.io.File;
 public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        Resource fileResource = new ThemeResource("\"C:\\B5wEpk55Ncw.jpg\"");
-        Image image = new Image("Image", fileResource);
-        image.setAlternateText(image.getCaption());
+        final GridLayout content = new GridLayout(30, 30);
 
-        GridLayout content = new GridLayout(4, 4);
-        content.setSizeFull();
-        setContent(content);
+
         Button reserve = new Button("Reserve");
         Layout seats = new Seats(10 , 9);
         Layout description = new Description();
         Layout poster = new Poster();
-        Layout legend = new Legend();
-        Layout order = new Order();
 
-        content.addComponent(image, 0, 0);
-        content.addComponent(seats, 1, 1, 2, 2);
-        content.addComponent(description, 0, 1, 0 ,2);
-        content.addComponent(legend, 1, 3, 2, 3);
-        content.addComponent(reserve, 3, 3);
-        content.addComponent(order, 3, 0);
-
-        content.setComponentAlignment(seats, Alignment.MIDDLE_CENTER);
-        content.setComponentAlignment(order, Alignment.MIDDLE_CENTER);
-        content.setComponentAlignment(reserve, Alignment.MIDDLE_CENTER);
+        content.addComponent(poster, 1, 1, 4, 4);
+        content.addComponent(seats, 1, 5, 28, 28);
+        content.addComponent(description, 5, 1, 14, 4);
+        content.addComponent(new Label("Price: 160"), 15, 3, 18, 4);
+        content.addComponent(new Label("Email"), 19, 2, 21, 2);
+        content.addComponent(new TextField(), 19, 3, 21, 4);
+        content.addComponent(reserve, 25, 4, 27, 4);
+        content.addComponent(new Button("Back"), 25, 2, 27, 2);
 
 
+
+
+            setContent(content);
+            content.setSizeFull();
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
