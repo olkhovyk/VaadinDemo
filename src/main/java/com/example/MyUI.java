@@ -20,28 +20,19 @@ import java.io.File;
 public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        final GridLayout content = new GridLayout(30, 30);
-
-
-        Button reserve = new Button("Reserve");
-        Layout seats = new Seats(10 , 9);
-        Layout description = new Description();
+        GridLayout content = new GridLayout(30, 30);
+        Layout menuBar = new Menu();
         Layout poster = new Poster();
+        Layout titleAndDesc = new TitleAndDesc();
+        Layout info = new Info();
 
-        content.addComponent(poster, 1, 1, 4, 4);
-        content.addComponent(seats, 1, 5, 28, 28);
-        content.addComponent(description, 5, 1, 14, 4);
-        content.addComponent(new Label("Price: 160"), 15, 3, 18, 4);
-        content.addComponent(new Label("Email"), 19, 2, 21, 2);
-        content.addComponent(new TextField(), 19, 3, 21, 4);
-        content.addComponent(reserve, 25, 4, 27, 4);
-        content.addComponent(new Button("Back"), 25, 2, 27, 2);
+        content.addComponent(menuBar, 0, 0, 29, 0);
+        content.addComponent(poster, 1, 2, 4, 4);
+        content.addComponent(titleAndDesc, 6, 2, 10, 4);
+        content.addComponent(info,11, 2, 20, 29);
 
-
-
-
-            setContent(content);
-            content.setSizeFull();
+        setContent(content);
+        content.setSizeFull();
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
